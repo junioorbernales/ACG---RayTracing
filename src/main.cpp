@@ -17,6 +17,7 @@
 #include "shaders/intersectionshader.h"
 #include "shaders/depthshader.h"
 #include "shaders/normalshader.h"
+#include "shaders/whittedintegrator.h"
 
 
 #include "materials/phong.h"
@@ -227,6 +228,7 @@ int main()
     Shader* shader = new IntersectionShader(intersectionColor, bgColor);
     Shader* depthshader = new DepthShader(intersectionColor, 7.5f, bgColor);
     Shader* normalshader = new NormalShader(intersectionColor, bgColor);
+    Shader* whittedintegrator = new WhittedIntegrator(intersectionColor, 7.5f, bgColor);
     //(... normal, whitted) ...
 
 
@@ -237,8 +239,8 @@ int main()
     Camera* cam;
     Scene myScene;
     //Create Scene Geometry and Illumiantion
-    buildSceneSphere(cam, film, myScene); //Task 2,3,4;
-    //buildSceneCornellBox(cam, film, myScene); //Task 5
+    //buildSceneSphere(cam, film, myScene); //Task 2,3,4;
+    buildSceneCornellBox(cam, film, myScene); //Task 5
 
     //---------------------------------------------------------------------------
 
@@ -248,10 +250,13 @@ int main()
     // Launch some rays! TASK 2,3,...   
     auto start = high_resolution_clock::now();
     //Task2
-    raytrace(cam, shader, film, myScene.objectsList, myScene.LightSourceList);
+    //raytrace(cam, shader, film, myScene.objectsList, myScene.LightSourceList);
 
     //Task3
     //raytrace(cam, normalshader, film, myScene.objectsList, myScene.LightSourceList);
+
+    //Task4
+    raytrace(cam, whittedintegrator, film, myScene.objectsList, myScene.LightSourceList);
     auto stop = high_resolution_clock::now();
 
 

@@ -1,4 +1,5 @@
 #include "phong.h"
+#include "../core/utils.h"
 
 #include <iostream>
 #include <numbers>
@@ -15,7 +16,8 @@ Vector3D Phong::getReflectance(const Vector3D& n, const Vector3D& wo,
 
     //(FILL..)
     // Compute ideal reflection direction
-    Vector3D wr = 2.0 * (dot(n, wi)) * n - wi;
+    Vector3D wr = Utils::computeReflectionDirection(wi, n);
+    
 
     // Compute diffuse term: rho_d / pi
 
