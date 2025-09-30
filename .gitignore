@@ -1,0 +1,65 @@
+# =======================================
+# Visual Studio
+# =======================================
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# =======================================
+# Archivos de compilación (Debug/Release)
+# =======================================
+*.obj
+*.pdb
+*.idb
+*.log
+*.tlog
+*.lastbuildstate
+*.db
+*.opendb
+*.cache
+*.ilk
+*.aps
+*.ncb
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# IntelliSense / precompiled headers
+*.ipch
+
+# =======================================
+# Ejecutables / librerías compiladas
+# =======================================
+*.exe
+*.dll
+*.lib
+*.exp
+*.app
+
+# =======================================
+# CMake (build, cache, install)
+# =======================================
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# Carpetas de build e install generadas por VS
+/out/
+/build/
+/install/
+
+# =======================================
+# Otros
+# =======================================
+*.bak
+*.tmp
+*.log
+*.swp
